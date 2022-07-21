@@ -2,10 +2,10 @@
 #include <string>
 using namespace std;
 
-string strarr;
+string s;
 
 int main(void){
-    cin >> strarr;
+    getline(cin, s);
 
-    cout << strarr << endl;
+    cout << s << endl;
 }

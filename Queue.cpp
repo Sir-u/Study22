@@ -17,11 +17,11 @@
 
 
 #include <iostream>
-#include <string>
+//#include <string>
 
 using namespace std;
 
-int Qarr[100001];
+int Qarr[2000001];
 int front, rear = 0;
 int N;
 
@@ -33,33 +33,36 @@ void Push(){
 }
 
 void Pop(){
-    if (front == rear) {cout << -1 << endl;}
+    if (front == rear) {cout << -1 << '\n';}
     else {
-        cout << Qarr[front++] << endl;
+        cout << Qarr[front++] << '\n';
     }
 }
 
 void Size(){
-    cout << rear - front << endl;
+    cout << rear - front << '\n';
 }
 
 void Empty(){
-    if (front == rear) {cout << 1 << endl;}
-    else {cout << 0 << endl;}
+    if (front == rear) {cout << 1 << '\n';}
+    else {cout << 0 << '\n';}
 }
 
 void Front(){
-    if (front == rear) {cout << -1 << endl;}
-    else {cout << Qarr[front] << endl;}
+    if (front == rear) {cout << -1 << '\n';}
+    else {cout << Qarr[front] << '\n';}
 }
 
 void Back(){
-    if (front == rear) {cout << -1 << endl;}
-    else {cout << Qarr[rear-1] << endl;}
+    if (front == rear) {cout << -1 << '\n';}
+    else {cout << Qarr[rear-1] << '\n';}
 }
 
 
 int main(void){
+    std::ios_base::sync_with_stdio(false);
+	std::cin.tie(NULL);
+	std::cout.tie(NULL);
     
     string order;
 

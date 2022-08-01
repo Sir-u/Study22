@@ -12,12 +12,14 @@ int main(void){
     
     for(int i=0; i<30; i++){
         getline(cin, arr);
+        
         for(int j=0; j<arr.size(); j++){
             if(arr[j]=='M'){
                 count++;
             }
         }
-        
     }
+
+
     cout << count << endl;
 }

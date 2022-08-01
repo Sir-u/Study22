@@ -17,7 +17,9 @@ int arrC[3][3];
 int main(void){
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
-            arrC[i][j] = arrA[i][j] * arrB[i][j];
+            for(int k=0; k<3; k++){
+                arrC[i][j] = arrA[i][j] * arrB[j][i];
+            }
         }
     }
 

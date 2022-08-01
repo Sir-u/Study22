@@ -38,7 +38,9 @@ public:
 
     void Size()
     {
-        cout << rear - front << endl;
+        if (rear > front) cout << rear - front << endl;
+        if (rear < front) cout << front - rear << endl;
+        if (rear == front) cout << 0 << endl;
     }
 
     void Front(){

@@ -24,8 +24,7 @@ public:
             int data;
             cin >> data;
             DeArr[front] = data;
-            front = (front + 9) % 10; //////////////////////////////////////////////////////////////////
-            
+            front = (front + 9) % 10;
         }
 
         if (point == "back")
@@ -91,12 +90,9 @@ public:
 int main(void){
     Deque q;
     
-    int N;
     string order;
 
-    cin >> N;
-
-    for (int i = 0; i < N; i++)
+    while (1)
     {
         cin >> order;
 

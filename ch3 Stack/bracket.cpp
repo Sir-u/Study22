@@ -7,42 +7,32 @@ using namespace std;
 bool check_brackets(string str)
 {
     stack<char> s;
+    s.push(0);
     for (int i = 0; i < str.length(); i++)
     {
-        // if (str[i] == '(' || str[i] == '{' || str[i] == '[')
-        s.push(str[i]);
+        if (str[i] == '(' || str[i] == '{' || str[i] == '[')
+            s.push(str[i]);
 
-        if (s.size() > 1)
+        if (str[i] == ')')
         {
-            if (str[i] == ')')
-            {
-                if (s.top() - 1 == '(')
-                {
-                    s.pop();
-                    s.pop();
-                }
-            }
+            if (s.top() == '(') s.pop();
+            else s.push(str[i]);
+        }
 
-            if (str[i] == '}')
-            {
-                if (s.top() - 2 == '{')
-                {
-                    s.pop();
-                    s.pop();
-                }
-            }
+        if (str[i] == '}')
+        {
+            if (s.top() == '{') s.pop();
+            else s.push(str[i]);
+        }
 
-            if (str[i] == ']')
-            {
-                if (s.top() - 2 == '[')
-                {
-                    s.pop();
-                    s.pop();
-                }
-            }
+        if (str[i] == ']')
+        {
+            if (s.top() == '[') s.pop();
+            else s.push(str[i]);
         }
     }
-    if (s.empty())
+
+    if (s.top() == 0)
         return true;
     else
         return false;

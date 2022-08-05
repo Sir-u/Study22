@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-
 #define endl "\n"
 
 bool check_brackets(string str)
@@ -16,19 +15,19 @@ bool check_brackets(string str)
         if (str[i] == ')')
         {
             if (s.top() == '(') s.pop();
-            else s.push(str[i]);
+            else return false;
         }
 
         if (str[i] == '}')
         {
             if (s.top() == '{') s.pop();
-            else s.push(str[i]);
+            else return false;
         }
 
         if (str[i] == ']')
         {
             if (s.top() == '[') s.pop();
-            else s.push(str[i]);
+            else return false;
         }
     }
 

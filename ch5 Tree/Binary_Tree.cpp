@@ -92,8 +92,8 @@ public:
         {
             Node<T>* ptr = node;
 
-            if (node->right == nullptr && node->left == nullptr)
-            {
+            if (node->right == nullptr && node->left == nullptr) ////////////////////////////////////
+            { 
                 //if(node == root) delete root;
                 delete node;
                 node = nullptr;
@@ -101,11 +101,7 @@ public:
             else if(node->right == nullptr)
             {
                 if(node == root) root = node->left;
-                // cout << node->value << ", " << ptr->value << endl;
-                // cout << root->value << endl;
                 node = node->left;
-                // cout << node->value << ", " << ptr->value << endl;
-                // cout << root->left->value << endl;
                 delete ptr;
             }
             else if(node->left == nullptr)

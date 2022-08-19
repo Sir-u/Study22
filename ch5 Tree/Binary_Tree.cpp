@@ -94,7 +94,7 @@ public:
 
             if (node->right == nullptr && node->left == nullptr) ////////////////////////////////////
             {
-                if(node->value == root->value) delete root;
+                if(node->value == root->value) root = nullptr;
                 delete node;
                 node = nullptr;
             }
@@ -164,6 +164,10 @@ public:
                 Display(n->left, mode);
                 Display(n->right, mode);
             }
+            else if(root == nullptr)
+            {
+                cout << "Tree is empty";
+            }
         }
         if (mode == 2)
         {
@@ -172,6 +176,10 @@ public:
                 Display(n->left, mode);
                 cout << n->value << "; ";
                 Display(n->right, mode);
+            }
+            else if(root == nullptr)
+            {
+                cout << "Tree is empty";
             }
         }
 
@@ -182,6 +190,10 @@ public:
                 Display(n->left, mode);
                 Display(n->right, mode);
                 cout << n->value << "; ";
+            }
+            else if(root == nullptr)
+            {
+                cout << "Tree is empty";
             }
         }
     }

@@ -102,6 +102,8 @@ long long int is_Dinstance(long long int x, long long int y)
 int main(void)
 {
     
+
+    
     cin >> N >> K >> Q;
 
     for (int i = 0; i < Q; i++)

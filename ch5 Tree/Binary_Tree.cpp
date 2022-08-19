@@ -2,16 +2,16 @@
 using namespace std;
 #define endl "\n";
 
-template<typename T>
+template <typename T>
 struct Node
 {
 public:
     T value;
-    struct Node* left;
-    struct Node* right;
+    struct Node *left;
+    struct Node *right;
 };
 
-template<typename T>
+template <typename T>
 class BinaryTree
 {
 private:
@@ -19,15 +19,14 @@ private:
     int size = 0;
 
 public:
-    BinaryTree() : root(nullptr) {};
-    ~BinaryTree() {};
-
+    BinaryTree() : root(nullptr){};
+    ~BinaryTree(){};
 
     Node<T>* FindMax(Node<T> *node)
     {
         if (node == NULL)
             return NULL;
-        
+
         while (node->right != NULL)
         {
             node = node->right;
@@ -59,13 +58,13 @@ public:
             while (ptr != nullptr)
             {
                 tmpRoot = ptr;
-                if(node->value < ptr->value)
+                if (node->value < ptr->value)
                     ptr = ptr->left;
                 else
                     ptr = ptr->right;
             }
 
-            if(node->value < tmpRoot->value)
+            if (node->value < tmpRoot->value)
                 tmpRoot->left = node;
             else
                 tmpRoot->right = node;
@@ -83,30 +82,33 @@ public:
 
     Node<T>* Remove(Node<T> *node, T data)
     {
-        if(node == nullptr) return node;
-        else if(node->value > data)
+        if (node == nullptr)
+            return node;
+        else if (node->value > data)
             node->left = Remove(node->left, data);
-        else if(node->value < data)
+        else if (node->value < data)
             node->right = Remove(node->right, data);
         else
         {
-            Node<T>* ptr = node;
+            Node<T> *ptr = node;
 
             if (node->right == nullptr && node->left == nullptr) ////////////////////////////////////
-            { 
-                //if(node == root) delete root;
+            {
+                if(node->value == root->value) delete root;
                 delete node;
                 node = nullptr;
             }
-            else if(node->right == nullptr)
+            else if (node->right == nullptr)
             {
-                if(node == root) root = node->left;
+                if (node == root)
+                    root = node->left;
                 node = node->left;
                 delete ptr;
             }
-            else if(node->left == nullptr)
+            else if (node->left == nullptr)
             {
-                if(node == root) root = node->right;
+                if (node == root)
+                    root = node->right;
                 node = node->right;
                 delete ptr;
             }
@@ -133,17 +135,21 @@ public:
         Node<T> *ptr = root;
         Node<T> *tmpRoot = nullptr;
 
-        while(ptr != nullptr)
+        while (ptr != nullptr)
         {
-            if(ptr->value == data)
+            if (ptr->value == data)
             {
                 cout << data << " exists" << endl;
                 break;
             }
-            else if(ptr->value < data)
-                {ptr = ptr->right;}
+            else if (ptr->value < data)
+            {
+                ptr = ptr->right;
+            }
             else
-                {ptr = ptr->left;}
+            {
+                ptr = ptr->left;
+            }
         }
         cout << "Can't find " << data << endl;
     }
@@ -188,8 +194,6 @@ public:
         Display(root, mode);
         cout << endl;
     }
-
-
 };
 
 int main(void)
@@ -201,10 +205,14 @@ int main(void)
     {
         cin >> order;
 
-        if(order == "add") Tree.AddNode();
-        if(order == "remove") Tree.RemoveNode();
-        if(order == "search") Tree.SearchValue();
-        if(order == "show") Tree.Show();
+        if (order == "add")
+            Tree.AddNode();
+        if (order == "remove")
+            Tree.RemoveNode();
+        if (order == "search")
+            Tree.SearchValue();
+        if (order == "show")
+            Tree.Show();
 
-    }while(order != "end");
+    } while (order != "end");
 }

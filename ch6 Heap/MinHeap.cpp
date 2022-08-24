@@ -39,9 +39,9 @@ public:
     void PushHeap(T data)
     {
         int c_index = ++heap_size; // start from the index 1
-        int p_index = c_index/2;
+        int p_index = c_index / 2;
 
-        if(!is_empty())
+        if (!is_empty())
         {
             while (p_index > 0 && heap[p_index] > data)
             {
@@ -58,7 +58,9 @@ public:
         if (!is_empty())
         {
             cout << PopHeap() << endl;
-        }else{
+        }
+        else
+        {
             cout << "Heap is empty" << endl;
         }
     }
@@ -76,11 +78,12 @@ public:
 
             while (c_index <= heap_size)
             {
-                if(c_index + 1 <= heap_size && heap[c_index + 1] > heap[c_index])
+                if (c_index + 1 <= heap_size && heap[c_index + 1] > heap[c_index])
                 {
                     c_index++;
                 }
-                if(heap[c_index] > heap[p_index]) break;
+                if (heap[c_index] > heap[p_index])
+                    break;
 
                 swap(heap[c_index], heap[p_index]);
                 p_index /= 2;
@@ -99,14 +102,14 @@ public:
             {
                 cout << heap[i] << "; ";
             }
-        }else{
+        }
+        else
+        {
             cout << "Heap is empty.";
         }
         cout << endl;
     }
-
 };
-
 
 int main(void)
 {
@@ -125,5 +128,4 @@ int main(void)
             Heap.Show();
 
     } while (order != "end");
-    
 }

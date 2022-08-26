@@ -11,7 +11,7 @@ class Heap
 private:
     T heap[MAX];
     int heap_size;
-    bool state = true; // if true, the heap is empty, otherwise the heap is not empty;
+    //bool state = true; // if true, the heap is empty, otherwise the heap is not empty;
 public:
     Heap()
     {

@@ -37,35 +37,46 @@ int main()
 {
     int n;
     cin >> n;
-    
-    // int* arrA = new int[n];
-    // int* arrB = new int[n];
+
+    int loc, newItem, ans = 0;
     vector<int> arrA;
     vector<int> arrB;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int num;
         cin >> num;
         arrA.push_back(num);
     }
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int num;
         cin >> num;
         arrB.push_back(num);
     }
 
-    if(arrA == arrB)
+    for (int i = 1; i < n; i++)
     {
-        cout << "aaaa" << endl;
+        loc = i - 1;
+        newItem = arrA[i];
+
+        while (0 <= loc && newItem < arrA[loc])
+        {
+            arrA[loc + 1] = arrA[loc];
+            loc--;
+
+            if (arrA == arrB)
+            {
+                ans = 1;
+                break;
+            }
+        }
+
+        if (loc + 1 != i){
+            arrA[loc + 1] = newItem;
+        }
     }
 
-    //for(int i = 1; i < n; i++)
-
-
-
-    // delete[] arrA;
-    // delete[] arrB;
+    cout << ans;
 }

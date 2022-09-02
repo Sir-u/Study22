@@ -25,6 +25,7 @@ int main()
         for (j = i - 1; j >= 0 && arr[j] > tmp; j--)
         {
             arr[j + 1] = arr[j];
+            //Show(arr);
         }
 
         arr[j + 1] = tmp;

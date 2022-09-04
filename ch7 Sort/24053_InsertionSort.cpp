@@ -27,18 +27,21 @@
 // 출력
 // 삽입 정렬로 배열 A를 오름차순 정렬하는 과정에서 배열 A가 배열 B와 같은 경우가 발생하면 1, 아니면 0을 출력한다.
 
+
+
+
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 #define endl "\n";
+
 
 int main()
 {
     int n;
     cin >> n;
 
-    int loc, newItem, ans = 0;
+    int loc = 0, newItem = 0, ans = 0;
     vector<int> arrA;
     vector<int> arrB;
 
@@ -65,6 +68,16 @@ int main()
         {
             arrA[loc + 1] = arrA[loc];
             loc--;
+            
+            if (arrA == arrB)
+            {
+                ans = 1;
+                break;
+            }
+
+            if (loc + 1 != i){
+                arrA[loc + 1] = newItem;
+            }
 
             if (arrA == arrB)
             {
@@ -72,11 +85,6 @@ int main()
                 break;
             }
         }
-
-        if (loc + 1 != i){
-            arrA[loc + 1] = newItem;
-        }
     }
-
     cout << ans;
 }

@@ -25,7 +25,7 @@ int main()
     {
         cin >> arr[i];
     }
-    
+
     sort(arr, arr+n);
     
     for(int i = 0; i < n; i++)

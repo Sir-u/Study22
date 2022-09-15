@@ -15,27 +15,36 @@
 
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 #define endl "\n";
+
+void PrintStar(int i, int j, int n)
+{
+    if ((i / n) % 3 == 1 && (j / n) % 3 == 1)
+    {
+        cout << " ";
+    }
+    else
+    {
+        if(n/3==0){
+            cout << "*";
+        }
+        else{
+            PrintStar(i, j, n/3);
+        }
+    }
+}
 
 int main()
 {
     int n;
     cin >> n;
 
-    for(int i=1; i<=n; i++)
+    for(int i=0; i<n; i++)
     {
-        for(int j=1; j<=n; j++)
+        for(int j=0; j<n; j++)
         {
-            if ((n/3 < j <= (2*n)/3) && (n/3 < i <= (2*n)/3))
-            {
-                cout << " ";
-            }
-            else
-            {
-                cout << "*";
-            }
+            PrintStar(i, j, n);
         }
         cout << endl;
     }

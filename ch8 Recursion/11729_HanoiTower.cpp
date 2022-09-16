@@ -19,9 +19,49 @@
 using namespace std;
 #define endl "\n";
 
+// void Hanoi(int n, int f, int s, int t)
+// {
+//     if(n == 1){
+//         cout << f << " " << s << endl;
+//     }
+//     else
+//     {
+//         Hanoi(n - 1, f, t, s);
+//         cout << f << " " << s << endl;
+//         Hanoi(n - 1, t, s, f);
+//     }
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     cout << (1<<n) - 1 << endl;
+//     Hanoi(n, 1, 3, 2);
+// }
+
+
+
+
+void Hanoi(int n, int from, int to, int bypass)
+{
+    if(n == 1){
+        cout << from << " " << to << endl;
+    }
+    else
+    {
+        Hanoi(n - 1, from, bypass, to);
+        cout << from << " " << to << endl;
+        Hanoi(n - 1, bypass, to, from);
+    }
+}
+
 int main()
 {
     int n;
     cin >> n;
-    
+    cout << (1<<n) - 1 << endl;
+    Hanoi(n, 1, 3, 2);
 }
+
+

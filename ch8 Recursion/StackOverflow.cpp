@@ -2,9 +2,9 @@
 using namespace std;
 
 void hello(){
-	printf("hello/n");
+	
 	hello();
-	//printf("hello\n");
+	printf("hello\n");
 }
 
 int main()

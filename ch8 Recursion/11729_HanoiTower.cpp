@@ -35,7 +35,7 @@ void Hanoi(int n, int from, int to, int bypass)
 int main()
 {
     int n;
-    cin >> n a;
+    cin >> n;
     cout << (1<<n) - 1 << endl;
     Hanoi(n, 1, 3, 2);
 }

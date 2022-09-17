@@ -21,9 +21,9 @@ int fib(int n)
 int main()
 {
     int n;
-    cin >> n;
+    scanf("%d", &n);
 
     fib(n);
 
-    cout << cnt << endl;
+    printf("%.0f\n", cnt);
 }

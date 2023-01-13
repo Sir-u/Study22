@@ -271,8 +271,8 @@ int main(void)
     // List->AddNode(10);
     // delete List;
 
-    CirclelinkedList<string> List;
-    List.AddNode("a");
+    CirclelinkedList<char> List;
+    List.AddNode('a');
     List.AddNode('b');
     List.AddNode('c');
     List.RemoveNode('c');

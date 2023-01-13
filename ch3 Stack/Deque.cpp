@@ -103,5 +103,4 @@ int main(void){
         if (order == "front") q.Front();
         if (order == "back") q.Back();
     }
-
 }

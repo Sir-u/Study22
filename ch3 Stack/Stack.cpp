@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <errno.h>
 #include <iostream>
 using namespace std;
 
@@ -53,6 +55,10 @@ public:
 
     void Top()
     {
+        if(top == -1){
+            const int err = errno;
+            perror("write error");
+        }
         cout << sArr[top] << endl;
     }
 };

@@ -194,5 +194,6 @@ int main(void)
     List.AddNode(12);
     List.AddNode(15);
     List.AddHead(5);
+    List.Show();
     
 }
